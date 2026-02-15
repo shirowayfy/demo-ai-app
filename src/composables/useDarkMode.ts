@@ -14,9 +14,5 @@ applyTheme(isDark.value);
 watch(isDark, (val) => applyTheme(val));
 
 export function useDarkMode() {
-  function toggleDark(value?: boolean) {
-    isDark.value = value ?? !isDark.value;
-  }
-
-  return { isDark, toggleDark };
+  return { isDark };
 }
