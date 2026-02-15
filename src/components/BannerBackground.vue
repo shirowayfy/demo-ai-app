@@ -5,7 +5,7 @@
   <svg
     class="absolute inset-0 h-full w-full"
     xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMidYMid slice"
     viewBox="0 0 1200 400"
     aria-hidden="true"
   >
