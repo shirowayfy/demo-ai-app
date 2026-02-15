@@ -321,50 +321,50 @@
 }
 
 /* Dark mode blob colors */
-:global(.dark) .blob-stop-inner-1 {
+:global(body.dark) .blob-stop-inner-1 {
   stop-color: oklch(0.5 0.2 270);
   stop-opacity: 0.2;
 }
-:global(.dark) .blob-stop-outer-1 {
+:global(body.dark) .blob-stop-outer-1 {
   stop-color: oklch(0.5 0.2 270);
   stop-opacity: 0;
 }
 
-:global(.dark) .blob-stop-inner-2 {
+:global(body.dark) .blob-stop-inner-2 {
   stop-color: oklch(0.45 0.2 330);
   stop-opacity: 0.15;
 }
-:global(.dark) .blob-stop-outer-2 {
+:global(body.dark) .blob-stop-outer-2 {
   stop-color: oklch(0.45 0.2 330);
   stop-opacity: 0;
 }
 
-:global(.dark) .blob-stop-inner-3 {
+:global(body.dark) .blob-stop-inner-3 {
   stop-color: oklch(0.5 0.15 200);
   stop-opacity: 0.12;
 }
-:global(.dark) .blob-stop-outer-3 {
+:global(body.dark) .blob-stop-outer-3 {
   stop-color: oklch(0.5 0.15 200);
   stop-opacity: 0;
 }
 
-:global(.dark) .shape-stroke {
+:global(body.dark) .shape-stroke {
   stroke: oklch(0.8 0 0 / 0.15);
 }
 
-:global(.dark) .dot-fill {
+:global(body.dark) .dot-fill {
   fill: oklch(0.85 0 0 / 0.25);
 }
 
-:global(.dark) .line-stop-start {
+:global(body.dark) .line-stop-start {
   stop-color: oklch(0.5 0.15 270);
   stop-opacity: 0;
 }
-:global(.dark) .line-stop-mid {
+:global(body.dark) .line-stop-mid {
   stop-color: oklch(0.5 0.15 270);
   stop-opacity: 0.3;
 }
-:global(.dark) .line-stop-end {
+:global(body.dark) .line-stop-end {
   stop-color: oklch(0.5 0.15 270);
   stop-opacity: 0;
 }
