@@ -1,20 +1,11 @@
-import { useColorMode } from '@vueuse/core'
-import { computed } from 'vue'
+import { useDark } from '@vueuse/core'
 
 export function useDarkMode() {
-  const mode = useColorMode({
+  const isDark = useDark({
+    selector: 'html',
     attribute: 'class',
-    modes: {
-      dark: 'dark',
-      light: '',
-    },
-  })
-
-  const isDark = computed({
-    get: () => mode.value === 'dark',
-    set: (value: boolean) => {
-      mode.value = value ? 'dark' : 'light'
-    },
+    valueDark: 'dark',
+    valueLight: '',
   })
 
   return { isDark }

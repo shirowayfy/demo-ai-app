@@ -7,7 +7,7 @@ import TheBanner from '@/components/TheBanner.vue'
 <template>
   <div class="flex min-h-svh flex-col">
     <TheHeader />
-    <main class="container mx-auto flex flex-1 items-center justify-center px-4">
+    <main class="flex flex-1 items-center justify-center">
       <TheBanner />
     </main>
     <TheFooter />
