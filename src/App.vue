@@ -1,11 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TheHeader from '@/components/TheHeader.vue'
+import TheFooter from '@/components/TheFooter.vue'
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div class="flex min-h-svh flex-col">
+    <TheHeader />
+    <main class="container mx-auto flex flex-1 items-center justify-center px-4">
+      <h1 class="text-4xl font-bold">HELLO WORLD</h1>
+    </main>
+    <TheFooter />
+  </div>
 </template>
-
-<style scoped></style>
