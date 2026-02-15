@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Moon, Sun } from 'lucide-vue-next'
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -7,6 +8,10 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
 import { Separator } from '@/components/ui/separator'
+import { Switch } from '@/components/ui/switch'
+import { useDarkMode } from '@/composables/useDarkMode'
+
+const { isDark } = useDarkMode()
 </script>
 
 <template>
@@ -16,25 +21,33 @@ import { Separator } from '@/components/ui/separator'
         <span class="text-xl font-bold">Demo App</span>
       </div>
 
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/" :class="navigationMenuTriggerStyle()">
-              Home
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/about" :class="navigationMenuTriggerStyle()">
-              About
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/contact" :class="navigationMenuTriggerStyle()">
-              Contact
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+      <div class="flex items-center gap-6">
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuLink href="/" :class="navigationMenuTriggerStyle()">
+                Home
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink href="/about" :class="navigationMenuTriggerStyle()">
+                About
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink href="/contact" :class="navigationMenuTriggerStyle()">
+                Contact
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+
+        <div class="flex items-center gap-2">
+          <Sun class="size-4 text-muted-foreground" />
+          <Switch v-model:checked="isDark" />
+          <Moon class="size-4 text-muted-foreground" />
+        </div>
+      </div>
     </div>
     <Separator />
   </header>
