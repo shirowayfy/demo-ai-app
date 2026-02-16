@@ -10,9 +10,12 @@ function applyTheme(dark: boolean) {
 // Apply on init
 applyTheme(isDark.value);
 
-// React to changes
-watch(isDark, (val) => applyTheme(val));
-
 export function useDarkMode() {
-  return { isDark };
+  watch(isDark, (val) => applyTheme(val));
+
+  function toggleDark(value?: boolean) {
+    isDark.value = value ?? !isDark.value;
+  }
+
+  return { isDark, toggleDark };
 }
