@@ -11,11 +11,7 @@ import { Separator } from '@/components/ui/separator'
 import { Switch } from '@/components/ui/switch'
 import { useDarkMode } from '@/composables/useDarkMode'
 
-const { isDark } = useDarkMode()
-
-function onThemeSwitch(checked: boolean) {
-  isDark.value = checked
-}
+const { isDark, toggleDark } = useDarkMode()
 </script>
 
 <template>
@@ -48,7 +44,7 @@ function onThemeSwitch(checked: boolean) {
 
         <div class="flex items-center gap-2">
           <Sun class="size-4 text-muted-foreground" />
-          <Switch :checked="isDark" @update:checked="onThemeSwitch" />
+          <Switch :checked="isDark" @update:checked="toggleDark" />
           <Moon class="size-4 text-muted-foreground" />
         </div>
       </div>
