@@ -12,6 +12,10 @@ import { Switch } from '@/components/ui/switch'
 import { useDarkMode } from '@/composables/useDarkMode'
 
 const { isDark } = useDarkMode()
+
+function onThemeSwitch(checked: boolean) {
+  isDark.value = checked
+}
 </script>
 
 <template>
@@ -44,7 +48,7 @@ const { isDark } = useDarkMode()
 
         <div class="flex items-center gap-2">
           <Sun class="size-4 text-muted-foreground" />
-          <Switch v-model:checked="isDark" />
+          <Switch :checked="isDark" @update:checked="onThemeSwitch" />
           <Moon class="size-4 text-muted-foreground" />
         </div>
       </div>

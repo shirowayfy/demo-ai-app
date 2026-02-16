@@ -1,21 +1,18 @@
-import { useColorMode } from '@vueuse/core'
-import { computed } from 'vue'
+import { ref, watch } from "vue";
+
+const isDark = ref(localStorage.getItem("theme") === "dark");
+
+function applyTheme(dark: boolean) {
+  document.body.classList.toggle("dark", dark);
+  localStorage.setItem("theme", dark ? "dark" : "light");
+}
+
+// Apply on init
+applyTheme(isDark.value);
+
+// React to changes
+watch(isDark, (val) => applyTheme(val));
 
 export function useDarkMode() {
-  const mode = useColorMode({
-    attribute: 'class',
-    modes: {
-      dark: 'dark',
-      light: '',
-    },
-  })
-
-  const isDark = computed({
-    get: () => mode.value === 'dark',
-    set: (value: boolean) => {
-      mode.value = value ? 'dark' : 'light'
-    },
-  })
-
-  return { isDark }
+  return { isDark };
 }
